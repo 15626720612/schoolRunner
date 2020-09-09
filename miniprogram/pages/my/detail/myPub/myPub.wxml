@@ -19,6 +19,7 @@
             {{jobDocItem.date}}
           </view>
         </view>
+        <view class="right-btn" data-jobDocItem="{{jobDocItem}}" data-item="{{item}}" catchtap="employ">聘用</view>
       </view>   
     </block>
 

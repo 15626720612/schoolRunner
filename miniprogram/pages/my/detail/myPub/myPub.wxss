@@ -5,10 +5,8 @@
   border-bottom: 1rpx solid #eaeaea;
 }
 .job-list-doc {
-  display: grid;
-  grid-template-columns: 10% 80%;
-  justify-content: center;
-  justify-items: center;
+  display: flex;
+  align-items: center;
   padding: 20rpx;
 }
 .icon {
@@ -28,4 +26,12 @@
 .job-list-item {
   display: grid;
   grid-template-columns: 90% 10%;
+}
+.right-btn{
+  margin-left: auto;
+  padding: 3px 10px;
+  border-radius: 24rpx;
+  border: 1rpx solid #1677FF;
+  font-size: 24rpx;
+  color: #1677FF;
 }

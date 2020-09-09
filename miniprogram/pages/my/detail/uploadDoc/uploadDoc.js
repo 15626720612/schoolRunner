@@ -19,6 +19,7 @@ Page({
   },
 
   onLoad: function (options) {
+    console.log(app.globalData.openid)
     jobList.where({
       _openid: app.globalData.openid
     }).get().then((res)=>{

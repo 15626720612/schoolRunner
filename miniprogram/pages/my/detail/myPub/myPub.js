@@ -1,4 +1,5 @@
 const db = wx.cloud.database();
+const jobDetail = db.collection('jobDetail');
 const util = require('../../../utils/utils')
 
 Page({
@@ -44,6 +45,29 @@ Page({
       })
     }
   },
+
+  // 聘用
+  employ(item){
+    console.log(item.currentTarget.dataset.item._id)
+    const data = item.currentTarget.dataset.item
+    if(data.employList){
+      data.employList.push(item.currentTarget.dataset.jobDocItem)
+    }else{
+      console.log('mmm',item.currentTarget.dataset.jobdocitem)
+      data.employList = [item.currentTarget.dataset.jobdocitem]
+    }
+    console.log(data)
+    jobDetail.doc(item.currentTarget.dataset.item._id).update({
+      data: {
+        employList:data.employList
+      }
+    }).then((res) => {
+      wx.showToast({
+        title: '聘用成功'
+      })
+    })
+  },
+
   showJobList(e){
     let {jobdoclistindex, index} = e.currentTarget.dataset;
     let fileID = this.data.offerList[index].jobDocList[jobdoclistindex].url;

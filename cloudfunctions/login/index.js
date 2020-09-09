@@ -17,11 +17,9 @@ cloud.init({
  */
 exports.main = (event, context) => {
   
-  
-
   // 可执行其他自定义逻辑
   // 
-
+  console.log(event)
   // 获取 WX Context (微信调用上下文)，包括 OPENID、APPID、及 UNIONID（需满足 UNIONID 获取条件）等信息
   const wxContext = cloud.getWXContext()
 
